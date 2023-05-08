@@ -6,18 +6,22 @@
   "scripts": {
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.ts --network",
+    "upgrade": "hardhat run scripts/upgrade.ts --network",
     "test": "hardhat test",
-    "verify": "hardhat verify --network"
+    "verify": "hardhat verify --network",
+    "console": "hardhat console --network"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@openzeppelin/hardhat-upgrades": "^1.24.0",
     "hardhat": "^2.13.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.2",
+    "@openzeppelin/contracts-upgradeable": "^4.8.3",
     "dotenv": "^16.0.3"
   }
 }
