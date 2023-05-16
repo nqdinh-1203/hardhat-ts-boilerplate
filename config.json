@@ -4,5 +4,8 @@
   "main": {},
   "mumbai": {
     "Demo": "0xDf459f1ce2CC77DAeC3f7DfDbBEf55f6022dCF26"
+  },
+  "localhost": {
+    "Demo": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"
   }
 }
