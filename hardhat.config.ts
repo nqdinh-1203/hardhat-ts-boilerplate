@@ -1,8 +1,8 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import '@openzeppelin/hardhat-upgrades';
-import "@nomiclabs/hardhat-ethers";
-import "hardhat-deploy";
+// import "@nomiclabs/hardhat-ethers";
+// import "hardhat-deploy";
 import * as dotenv from 'dotenv'
 
 dotenv.config()
@@ -33,15 +33,15 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: `${process.env.POLYGONSCAN_API_KEY}`
   },
-  namedAccounts: {
-    deployer: {
-      default: 0, // here this will by default take the first account as deployer
-      31337: 0, // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
-    },
-    user: {
-      default: 1
-    }
-  },
+  // namedAccounts: {
+  //   deployer: {
+  //     default: 0, // here this will by default take the first account as deployer
+  //     31337: 0, // similarly on mainnet it will take the first account as deployer. Note though that depending on how hardhat network are configured, the account 0 on one network can be different than on another
+  //   },
+  //   user: {
+  //     default: 1
+  //   }
+  // },
 };
 
 export default config;
