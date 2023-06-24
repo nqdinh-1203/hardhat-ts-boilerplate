@@ -17,6 +17,11 @@ let real_accounts = [
   process.env.OWNER_KEY as string,
 ];
 
+let testnetcogi_accounts = [
+  process.env.TESTNET_DEPLOYER_KEY as string,
+  process.env.TESTNET_OWNER_KEY as string,
+];
+
 const config: HardhatUserConfig = {
   solidity: "0.8.18",
   defaultNetwork: "hardhat",
@@ -25,10 +30,10 @@ const config: HardhatUserConfig = {
     //   url: `https://eth-goerli.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
     //   accounts: [`${process.env.PRIVATE_KEY}`]
     // },
-    // mumbai: {
-    //   url: "https://polygon-mumbai.g.alchemy.com/v2/isVMJIz7j1q9D5e7_simS8hRUByh1PLn",
-    //   accounts: [`${process.env.PRIVATE_KEY}`]
-    // },
+    mumbai: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/isVMJIz7j1q9D5e7_simS8hRUByh1PLn",
+      accounts: [`${process.env.PRIVATE_KEY}`]
+    },
     localhost: {
       url: "http://localhost:8545",
       accounts: [
@@ -40,7 +45,7 @@ const config: HardhatUserConfig = {
     // testnetcogi: {
     //   url: `https://testnet.cogi.technology`,
     //   tags: ['test', 'use_root'],
-    //   accounts: real_accounts,
+    //   accounts: testnetcogi_accounts,
     //   chainId: 5555,
     //   gasPrice: 100000000000,
     // },
