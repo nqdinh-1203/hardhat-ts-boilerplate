@@ -5,29 +5,27 @@ import { DeployFunction } from 'hardhat-deploy/types'
 import hre from 'hardhat'
 import * as Config from "../config";
 
-import * as dotenv from 'dotenv'
-dotenv.config()
-
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   await Config.initConfig();
 
   const { deployments, network } = hre;
   const { deploy } = deployments;
   // const [deployer, owner] = await ethers.getSigners();
-  const { deployer } = await getNamedAccounts();
+  const { deployer, user } = await getNamedAccounts();
 
-  console.log(`Deploying from address: ${deployer} at network: ${network.name}`, );
+  console.log(`Deploying from address: ${deployer} at network: ${network.name}`);
+  console.log(`Owner address: ${user}`);
 
   const demo = await deploy("Demo", {
     from: deployer,
     gasLimit: 4000000,
-    args: [],
+    args: [10],
   });
 
   console.log("Demo Contract address: ", demo.address);
   Config.setConfig(network.name + '.Demo', demo.address);
 
-  Config.updateConfig();
+  await Config.updateConfig();
 };
 
 export default func;

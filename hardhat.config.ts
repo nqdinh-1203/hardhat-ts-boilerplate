@@ -37,13 +37,13 @@ const config: HardhatUserConfig = {
       ],
       chainId: 31337
     },
-    testnetcogi: {
-      url: `https://testnet.cogi.technology`,
-      tags: ['test', 'use_root'],
-      accounts: real_accounts,
-      chainId: 5555,
-      gasPrice: 100000000000,
-    },
+    // testnetcogi: {
+    //   url: `https://testnet.cogi.technology`,
+    //   tags: ['test', 'use_root'],
+    //   accounts: real_accounts,
+    //   chainId: 5555,
+    //   gasPrice: 100000000000,
+    // },
   },
   etherscan: {
     apiKey: `${process.env.POLYGONSCAN_API_KEY}`,

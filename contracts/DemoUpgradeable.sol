@@ -5,13 +5,19 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
 contract DemoUpgradeable is Initializable {
     int256 testNumber;
+    address owner;
 
-    function initialize() external initializer {
-        testNumber = 0;
+    function initialize(int256 _num) external initializer {
+        testNumber = _num;
+        owner = msg.sender;
     }
 
     function getNumber() public view returns (int256) {
         return testNumber;
+    }
+
+    function getOwner() public view returns(address) {
+        return owner;
     }
 
     function setNumber(int256 number) public {
